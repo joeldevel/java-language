@@ -3,9 +3,8 @@ package arrays;
 public class SimpleArray {
 
     public static void main(String[] args) {
-        
-// An array is a container object that holds a fixed number of values of a single type
 
+// An array is a container object that holds a fixed number of values of a single type
         // declare an array of doubles. The array is not created after this, just declared
         double[] dailyEarnings;
         // allocate memory to contain 7 doubles. Now the array is created
@@ -47,6 +46,21 @@ public class SimpleArray {
             }
             System.out.println("");
         }
+
+        // copying arrays with System.arraycopy
+        String[] source = {"wheter", "you", "are", "interested", "in", "..."};
+
+        String[] destiny = new String[source.length];
+        System.arraycopy(source, 0, destiny, 0, source.length);
+        //This will do too
+        //String[] destiny = java.util.Arrays.copyOfRange(source, 0, source.length);
+        System.out.println("---\nShowing a copied array");
+        for (String word : destiny) {
+            System.out.print(word + " ");
+        }
+        System.out.println("");
+
+        System.out.println(java.util.Arrays.toString(destiny));
 
     }
 }
